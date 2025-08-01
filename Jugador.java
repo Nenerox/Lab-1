@@ -9,10 +9,15 @@ public class Jugador {
     public Jugador(String nombre) {
         this.nombre = nombre;
     }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public void eleccionInicial(){
-        System.out.println("Elige tu Pokémon inicial:");
-        System.out.println("1. " + pokemon1.getNombre() + " -Tipo" + pokemon1.getTipo() + " -ATK: " + pokemon1.getAtaque() + " -DEF " + pokemon1.getDefensa()    + " -Habilidad " + pokemon1.getHabilidad().getNombre());
+    public void eleccionInicial(Pokemon pokemon1, Pokemon pokemon2, Pokemon pokemon3, Pokemon pokemon4) {
+        this.pokemon1 = pokemon1;
+        this.pokemon2 = pokemon2;
+        this.pokemon3 = pokemon3;
+        this.pokemon4 = pokemon4;
     }
 
 }

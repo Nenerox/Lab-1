@@ -1,16 +1,28 @@
 public class Habilidad {
     private String nombre;
-    private String efecto;
-    private String probabilidad;
+    private int ataque;
+    private int probabilidad;
 
-    public Habilidad(String nombre, String efecto, String probabilidad) {
+    public Habilidad(String nombre, int ataque, int probabilidad) {
         this.nombre = nombre;
-        this.efecto = efecto;
+        this.ataque = ataque;
         this.probabilidad = probabilidad;
     }
-
+    public String getNombre() {
+        return nombre;
+    }
+    public int getAtaque() {
+        return ataque;
+    }
+    public int getProbabilidad() {
+        return probabilidad;
+    }
     public String getDatos() {
-        datos = "Nombre: " + this.nombre + ", Efecto: " + efecto + ", Probabilidad: " + probabilidad;
+        String datos ="Nombre: " + nombre + ", Efecto: " + ataque + ", Probabilidad: " + probabilidad +"%";
         return datos;
+    }
+    public boolean usarHabilidad() {
+        double probabilidadAleatoria = Math.random() * 101;
+        return probabilidadAleatoria <= probabilidad;
     }
 }

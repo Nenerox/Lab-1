@@ -12,6 +12,10 @@ public class Pokemon {
         this.defensa = defensa;
         this.habilidad = habilidad;
     }
+    public String getDatos() {
+        String datos = "Nombre: " + nombre + ", Tipo: " + tipo + ", Ataque: " + ataque + ", Defensa: " + defensa + ", Habilidad: " + habilidad.getDatos();
+        return datos;
+    }
 
     public String getNombre() {
         return nombre;
