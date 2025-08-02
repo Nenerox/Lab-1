@@ -18,7 +18,7 @@ public class Habilidad {
         return probabilidad;
     }
     public String getDatos() {
-        String datos ="Nombre: " + nombre + ", Efecto: " + ataque + ", Probabilidad: " + probabilidad +"%";
+        String datos ="Nombre: " + nombre + ", Efecto: Hace " + ataque +" De daño"+ ", Probabilidad: " + probabilidad +"%";
         return datos;
     }
     public boolean usarHabilidad() {
