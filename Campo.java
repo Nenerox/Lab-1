@@ -5,34 +5,32 @@ public class Campo {
 
     Jugador jugador1 = new Jugador("Jugador 1");
     Jugador jugador2 = new Jugador("Jugador 2");
-
-    Pokemon pokemon1 = new Pokemon("Charmander", "Fuego", 15, 5, new Habilidad("Cola de fuego", 25, 80));
     Pokemon pokemon2 = new Pokemon("Squirtle", "Agua", 17, 6, new Habilidad("Chorro de agua", 20, 90));
-    Pokemon pokemon3 = new Pokemon("Bulbasaur", "Planta", 19, 7, new Habilidad("Látigo cepa", 30, 70));
-    Pokemon pokemon4 = new Pokemon("Dedene", "Electrico", 16, 4, new Habilidad("Impactrueno", 100, 40));
-    Pokemon pokemon5 = new Pokemon("Pikachu", "Eléctrico", 15, 5, new Habilidad("Bola Electrica", 25, 80)); 
-    Pokemon pokemon6 = new Pokemon("Odish", "Planta", 10, 8, new Habilidad("Ataque rápido", 15, 90));
-    Pokemon pokemon7 = new Pokemon("Piplup", "Agua", 15, 10, new Habilidad("Hidrobomba", 100, 40));
-    Pokemon pokemon8 = new Pokemon("Torchic", "Fuego", 14, 9, new Habilidad("Lanzallamas", 22, 75));
+    Pokemon[] pokemones = new Pokemon[8];
+    
+    public Campo() {
+        pokemones[0] = new Pokemon("Charmander", "Fuego", 15, 5, new Habilidad("Cola de fuego", 25, 80));
+        pokemones[1] = new Pokemon("Squirtle", "Agua", 17, 6, new Habilidad("Chorro de agua", 20, 90));
+        pokemones[2] = new Pokemon("Bulbasaur", "Planta", 19, 7, new Habilidad("Látigo cepa", 30, 70));
+        pokemones[3] = new Pokemon("Dedene", "Electrico", 16, 4, new Habilidad("Impactrueno", 100, 40));
+        pokemones[4] = new Pokemon("Pikachu", "Eléctrico", 15, 5, new Habilidad("Bola Electrica", 25, 80)); 
+        pokemones[5] = new Pokemon("Odish", "Planta", 10, 8, new Habilidad("Ataque rápido", 15, 90));
+        pokemones[6] = new Pokemon("Piplup", "Agua", 15, 10, new Habilidad("Hidrobomba", 100, 40));
+        pokemones[7] = new Pokemon("Torchic", "Fuego", 14, 9, new Habilidad("Lanzallamas", 22, 75));
+    }
 
     public void iniciarJuego() {
-        jugador1.eleccionInicial(pokemon1, pokemon2, pokemon3, pokemon4);
-        jugador2.eleccionInicial(pokemon5, pokemon6, pokemon7, pokemon8);
+        jugador1.eleccionInicial(pokemones[0], pokemones[1], pokemones[2], pokemones[3]);
+        jugador2.eleccionInicial(pokemones[4], pokemones[5], pokemones[6], pokemones[7]);
     }
 
     public boolean ataqueEspecial(){
-        System.out.println("Desea utilizar la habilidad especial si/no");
         String opciones = teclado.nextLine();
         return opciones.equals("si");
     }
 
 
     public Pokemon nuevaRondaJ1() {
-        System.out.println("Jugador 1, elige un Pokémon para atacar: \n");
-        System.out.println("1. " + jugador1.pokemon1.getDatos());
-        System.out.println("2. " + jugador1.pokemon2.getDatos());
-        System.out.println("3. " + jugador1.pokemon3.getDatos());
-        System.out.println("4. " + jugador1.pokemon4.getDatos());
         int opcion = teclado.nextInt();
         teclado.nextLine();
         switch (opcion){
@@ -51,11 +49,6 @@ public class Campo {
     }
 
     public Pokemon nuevaRondaJ2() {
-        System.out.println("Jugador 2, elige un Pokémon para atacar: \n");
-        System.out.println("1. " + jugador2.pokemon1.getDatos());
-        System.out.println("2. " + jugador2.pokemon2.getDatos());
-        System.out.println("3. " + jugador2.pokemon3.getDatos());
-        System.out.println("4. " + jugador2.pokemon4.getDatos());
         int opcion = teclado.nextInt();
         teclado.nextLine();
         switch (opcion){

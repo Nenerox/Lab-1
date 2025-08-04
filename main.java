@@ -8,10 +8,25 @@ public class main {
 
         while (ronda <= 4){
             System.out.println("Iniciando ronda " + ronda +"\n");
+
+            System.out.println("Jugador 1, elige un Pokémon para atacar: \n");
+            System.out.println("1. " + campo.jugador1.pokemon1.getDatos());
+            System.out.println("2. " + campo.jugador1.pokemon2.getDatos());
+            System.out.println("3. " + campo.jugador1.pokemon3.getDatos());
+            System.out.println("4. " + campo.jugador1.pokemon4.getDatos());
             Pokemon pokemonj1 = campo.nuevaRondaJ1();
+
+            System.out.println("Desea utilizar la habilidad especial si/no");
             boolean especialj1 = campo.ataqueEspecial();
-            
+
+            System.out.println("Jugador 2, elige un Pokémon para atacar: \n");
+            System.out.println("1. " + campo.jugador2.pokemon1.getDatos());
+            System.out.println("2. " + campo.jugador2.pokemon2.getDatos());
+            System.out.println("3. " + campo.jugador2.pokemon3.getDatos());
+            System.out.println("4. " + campo.jugador2.pokemon4.getDatos());
             Pokemon pokemonj2 = campo.nuevaRondaJ2();
+            
+            System.out.println("Desea utilizar la habilidad especial si/no");
             boolean especialj2 = campo.ataqueEspecial();
 
             if (especialj1 && especialj2) {
@@ -36,6 +51,5 @@ public class main {
             ronda++;
         }
         System.out.println("El juego a terminado \n Jugador 1 gano: " + J1 + " rondas. \n Jugador 2 gano: " + J2 + " rondas." );
-
     }
 }
